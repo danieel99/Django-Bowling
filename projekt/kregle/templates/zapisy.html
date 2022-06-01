@@ -1,0 +1,13 @@
+{% extends 'szablon.html' %}
+
+{% block zawartosc %}
+        <h2> Powiedz nam coś o sobie i dołącz do klubu kręglowego :)</h2>
+
+		<form action="" method="post">
+			{% csrf_token %}
+			
+			{{ form.as_p }}
+			<button type="submit" class="onebtn"> DOŁĄCZ </button>
+		</form>
+
+{% endblock %}

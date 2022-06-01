@@ -1,0 +1,23 @@
+{% extends 'szablon.html' %}
+
+{% block zawartosc %}
+<br>
+<div>
+    <div id="container">
+    <h2>REZERWACJA</h2>
+    Zarezerwuj miły wieczór dla siebie i swoich znajomych. Możliwa jest rezerwacja online toru kręglowego. 
+
+    <form action="" method="post">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        <button type="submit" class="onebtn"><i class="fa-solid fa-check"></i>    ZAREZERWUJ</button>
+    </form>
+    
+    <br>
+    <form action="{% url 'rezerwacje' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="onebtn" ><i class="fa-regular fa-calendar"></i>  ZAJĘTE TERMINY</button>
+    </form> 
+</div>
+{% endblock %}

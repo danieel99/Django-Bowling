@@ -1,0 +1,14 @@
+{% extends 'szablon.html' %}
+
+{% block zawartosc %}
+<br>
+<div>
+    <div id="container">
+    <h2>TERMIN ZAJĘTY! </h2>
+    <form action="{% url 'rezerwacja' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="onebtn" ><i class="fa-regular fa-calendar-check"></i> INNY TERMIN</button>
+    </form> 
+</div>
+
+{% endblock %}

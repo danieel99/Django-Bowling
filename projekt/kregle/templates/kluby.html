@@ -1,0 +1,77 @@
+{% extends 'szablon.html' %}
+{% load static %}
+
+
+{% block zawartosc %}
+		<br>
+		<h2> KLUBY </h2> 
+		Już dziś zapisz się do jednego (lub więcej) z naszych super klubów! <br>
+		Czeka na Ciebie wiele zabawy i rywalizacji z innymi zawodnikami.<br>
+		 Zapraszamy!
+		<div>
+			<ul><div>
+				<li>
+					<a href="" class="figure">
+						<img src="{% static 'kregle/images/bowling.png' %}" alt>
+					</a>
+					<div>
+						<h3> KLUB KRĘGLOWY </h3>
+						<p>
+							asdsadvjksdbfsfsdf sdhvf sdfds
+						</p>
+						<br>
+						<div>
+							<form action="{% url 'zapisy' 3 %}" method="post">
+								{% csrf_token %}
+								<button class="onebtn"><i class="fa-solid fa-plus"></i> DOŁĄCZ TERAZ</button>
+								<button class="onebtn" formaction="{% url 'klubowi-gracze' 3%}"><i class="fa-solid fa-users"></i> ZAWODNICY</button>
+							</form>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="bilard.html" class="figure">
+						<img src="{% static 'kregle/images/bilard.jpg'%}" alt>
+					</a>
+					<div>
+						<h3> KLUB BILARDOWY </h3>
+						<p>
+							asdhjsfvbskdfsdfsdf sdhvf sdfds
+						</p><br>
+						<div>
+							<form action="{% url 'zapisy' 4 %}" method="post">
+								{% csrf_token %}
+								<button class="onebtn"><i class="fa-solid fa-plus"></i> DOŁĄCZ TERAZ</button>
+								<button class="onebtn" formaction="{% url 'klubowi-gracze' 4%}"><i class="fa-solid fa-users"></i> ZAWODNICY</button>
+							</form>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="lotki.html" class="figure">
+						<img src="{% static 'kregle/images/dart.jpg'%}" alt>
+					</a>
+					<div>
+						<h3> KLUB DARTERSKI </h3>
+						<p>
+							asdhjasbdhjasbdjksdbfs fsdhjf sdfbvsfs fj fsgbfhj sfvbskdfsdfsdf sdhvf sdfds
+						</p>
+						<br>
+						<div>
+							<form action="{% url 'zapisy' 5 %}" method="post">
+								{% csrf_token %}
+								<button class="onebtn"><i class="fa-solid fa-plus"></i> DOŁĄCZ TERAZ</button>
+								<button class="onebtn" formaction="{% url 'klubowi-gracze' 5%}"><i class="fa-solid fa-users"></i> ZAWODNICY</button>
+							</form>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<form action="{% url 'zawodnicy' %}" method="post">
+				{% csrf_token %}
+				<button class="onebtn">CAŁA EKIPA</button>
+			</form>
+		</div>
+		{% endblock %}

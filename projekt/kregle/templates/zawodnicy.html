@@ -1,0 +1,65 @@
+{% extends 'szablon.html' %}
+
+{% block zawartosc %}
+        <div id="container">
+            <section>
+                <h3> WSZYSCY CZŁONKOWIE </h3>
+                <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="text" class="search-input" placeholder="Imię">
+                        </th>
+                        <th>
+                            <input type="text" class="search-input" placeholder="Nazwisko">
+                        </th>
+                        <th>
+                            <input type="text" class="search-input" placeholder="Płeć">
+                        </th>
+                        <th>
+                            <input type="text" class="search-input" placeholder="Pseudonim">
+                        </th>
+                    </tr>
+                </thead>
+                {% for zawodnik in zawodnicy_p %}
+                <tbody>
+                    <tr>
+                        <td><p>{{ zawodnik.imie}}</p></td>
+                        <td><p>{{ zawodnik.nazwisko}}</p></td>
+                        <td><p>{{ zawodnik.plec}}</p></td>
+                        <td><p>"{{ zawodnik.pseudonim}}"</p></td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+                </table>
+            </section>
+            <div class="pagination">
+                <a href="?page=1"> &laquo</a>
+            </div>
+            {% for i in nums %}
+                <div class="pagination">
+                    <a href="?page={{forloop.counter}}"> {{ forloop.counter }} </a>
+                </div> 
+            {% endfor %}
+            <div class="pagination">
+                <a href="?page={{ zawodnicy_p.paginator.num_pages }}"> &raquo</a>
+            </div>
+        <!-- Strona {{ zawodnicy_p.number }} z {{ zawodnicy_p.paginator.num_pages}} -->
+
+            <!-- {% if zawodnicy_p.has_next %}
+            <div class="pagination">
+                <a href="?page={{zawodnicy_p.next_page_number}}"> Następna </a>
+                <a href="?page={{ zawodnicy_p.paginator.num_pages }}"> &raquo</a>
+            </div>
+            {% endif %} -->
+            <br><br>
+            <form action="{% url 'pobierz' %}" method="post">
+                {% csrf_token %}
+                
+                {{ form.as_p }}
+            
+                <button type="submit" class="onebtn">POBIERZ LISTĘ CZŁONKÓW</button>
+            </form>
+            <br>
+            
+{% endblock %}

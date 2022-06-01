@@ -1,0 +1,71 @@
+{% extends 'szablon.html' %}
+
+{% block zawartosc %}
+		<br>
+		<h2> CENNIK</h2>
+		<section>
+			<table class="table">
+			<thead>
+				<tr>
+					<th>
+						<input type="text" id='table' class="search-input" placeholder="Dzień tygodnia">
+					</th>
+					<th>
+						<input type="text" id='table' class="search-input" placeholder="Godziny">
+					</th>
+					<th>
+						<input type="text" id='table' class="search-input" placeholder="Kręgle*">
+					</th>
+					<th>
+						<input type="text" id='table' class="search-input" placeholder="Bilard**">
+					</th>
+					<th>
+						<input type="text" id='table' class="search-input" placeholder="Lotki***">
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><p> Poniedziałek - Piątek </p></td>
+					<td><p> 14:00 - 16:00</p></td>
+					<td><p>50 zł</p></td>
+					<td><p>10 zł</p></td>
+					<td><p>5 zł</p></td>
+				</tr>
+				<tr>
+					<td><p> Poniedziałek - Czwartek</p></td>
+					<td><p>16:00 - 23:00</p></td>
+					<td><p>60 zł</p></td>
+					<td><p>15 zł</p></td>
+					<td><p>5 zł</p></td>
+				</tr>
+				<tr>
+					<td><p> Sobota - Niedziela </p></td>
+					<td><p>9:00 - 16:00</p></td>
+					<td><p>60 zł</p></td>
+					<td><p>15 zł</p></td>
+					<td><p>5 zł</p></td>
+				</tr>
+				<tr>
+					<td><p> Piątek - Sobota</p></td>
+					<td><p>16:00 - 23:00</p></td>
+					<td><p>80 zł</p></td>
+					<td><p>20 zł</p></td>
+					<td><p>7 zł</p></td>
+				</tr>
+				<tr>
+					<td><p> Niedziela/ Święta </p></td>
+					<td><p>16:00 - 23:00</p></td>
+					<td><p>60 zł</p></td>
+					<td><p>20 zł</p></td>
+					<td><p>7 zł</p></td>
+				</tr>
+				
+			</tbody>
+			</table>
+			<br>
+			<p>* - cena dotyczy wynajmu 1 toru/ 1h</p>
+			<p>** - cena dotyczy wynajmu 1 stołu/ 1h</p>
+			<p>*** - cena dotyczy wynajmu 1 tarczy/ grę</p>
+		</section>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% load static %}
+<!doctype html>
+<!-- Website Template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Kręgielnia Django </title>
+	<link rel="stylesheet" type="text/css" href="{% static 'kregle/css/style.css'%}">
+	<script src="{% static 'kregle/js/function.js'%}"></script>
+	<script src="{% static 'chart.js' %}"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+	<link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="header">
+		<a href="{% url 'home' %}" class="logo">
+			<img src="{% static 'kregle/images/logo.png'%}" style="width:300px; height: 60px;"alt="">
+		</a>
+		<ul>
+			<li>
+				<a href="{% url 'home' %}"><i class="fa-solid fa-house-user"></i> Strona główna</a>
+			</li>
+			<li>
+				<a href="{% url 'cennik' %}"><i class="fa-solid fa-money-bill-1-wave"></i> Cennik</a>
+			</li>
+			<li>
+				<a href="{% url 'rezerwacja' %}"><i class="fa-regular fa-calendar-check"></i> Rezerwacja</a>
+			</li>
+			<li class="kluby">
+				<a href="{% url 'kluby' %}"><i class="fa-solid fa-bowling-ball"></i> Nasze kluby </a>
+			</li>
+		</ul>
+	</div>
+	<div id="body">
+        {% block zawartosc %}{% endblock %}
+	</div>
+	<div id="footer">
+		<div>
+			<p> Kręgielnia Django,&ensp; ul. Kręglowa 6,&ensp; 33-333 Kraków &emsp;&emsp;&emsp; Telefon: +48 12 55 444 33 &emsp;&emsp;&emsp; E-mail: kregielnia@django.pl</p>
+			<ul>
+				<li>
+					<a href="https://twitter.com/?lang=pl" id="twitter">twitter</a>
+				</li>
+				<li>
+					<a href="https://www.facebook.com/" id="facebook">facebook</a>
+				</li>
+				<li>
+					<a href="http://freewebsitetemplates.com/go/googleplus/" id="googleplus">googleplus</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

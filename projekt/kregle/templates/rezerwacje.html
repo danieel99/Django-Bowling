@@ -1,0 +1,41 @@
+{% extends 'szablon.html' %}
+
+{% block zawartosc %}
+        <div id="container">
+            <section>
+                <h3> ZAREZERWOWANE TERMINY </h3>
+                <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="text" class="search-input" placeholder="Imię">
+                        </th>
+                        <th>
+                            <input type="text" class="search-input" placeholder="Godzina">
+                        </th>
+                        <th>
+                            <input type="text" class="search-input" placeholder="Dzień">
+                        </th>
+                        <th>
+                            <input type="text" class="search-input" placeholder="Tor">
+                        </th>
+                        <th>
+                            <input type="text" class="search-input" placeholder="Liczba osób">
+                        </th>
+                    </tr>
+                </thead>
+                {% for rez in rezerwacje %}
+                <tbody>
+                    <tr>
+                        <td><p>{{ rez.rezerwujacy }}</p></td>
+                        <td><p>{{ rez.godziny }}</p></td>
+                        <td><p>{{ rez.dzien }}</p></td>
+                        <td><p>{{ rez.tor }}</p></td>
+                        <td><p>{{ rez.osoby }}</p></td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+                </table>
+            </section>
+        <script src="function.js"></script>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'szablon.html' %}
+
+{% block zawartosc %}
+        <div id="container">
+            <section>
+                <h3> CZŁONKOWIE KLUBU </h3>
+                <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="text" class="search-input" placeholder="Imię">
+                        </th>
+                        <th>
+                            <input type="text" class="search-input" placeholder="Nazwisko">
+                        </th>
+                        <th>
+                            <input type="text" class="search-input" placeholder="Płeć">
+                        </th>
+                        <th>
+                            <input type="text" class="search-input" placeholder="Pseudonim">
+                        </th>
+                    </tr>
+                </thead>
+                {% for zawodnik in zawodnicy %}
+                <tbody>
+                    <tr>
+                        <td><p>{{ zawodnik.imie }}</p></td>
+                        <td><p>{{ zawodnik.nazwisko }}</p></td>
+                        <td><p>{{ zawodnik.plec }}</p></td>
+                        <td><p>"{{ zawodnik.pseudonim }}"</p></td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+                </table>
+            </section>
+        
+{% endblock %}
